@@ -1,5 +1,7 @@
 #!/usr/bin/env python2
 
+# WAT.
+
 # Calculating some sales tax...
 
 # What's your tax rate? 
