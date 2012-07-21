@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#
+
 # Temperature conversion F<=>C
 
 # F => C Funtion
