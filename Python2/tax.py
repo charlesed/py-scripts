@@ -3,16 +3,14 @@
 # Calculating some sales tax...
 
 # What's your tax rate? 
-tax = float(input("Tax rate(%): "))
-tax = tax / 100
+tax_percentage = float(raw_input("Tax rate(%): "))
+tax_rate = tax_percentage / 100
 
 # Now what's your price?
-price = float(input("Price: "))
+subtotal = float(raw_input("Subtotal: "))
 
 # Do some math and print the total
-tax = price * tax
-total = price + round(tax, 2)
-print(total)
+print round(subtotal + (subtotal * tax_rate), 2)
 
 # Wait for user to press enter
-input("Press ENTER to exit")
+raw_input("Press ENTER to exit")
