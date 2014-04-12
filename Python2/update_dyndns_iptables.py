@@ -3,10 +3,10 @@
 import os
 import socket
 
-dyndns_host = ""
-dyndns_log = "/tmp/dyndns.log"
-local_ip = ""
-tcp_ports = ('22')
+dyndns_host = "home-dyn.charlesed.net"
+dyndns_log = "/tmp/home-dyn.charlesed.net.log"
+local_ip = "162.211.66.2"
+tcp_ports = ('22','20406')
 udp_ports = ()
 
 def updatelog(file, new_ip):
@@ -16,12 +16,12 @@ def updatelog(file, new_ip):
 
 def updateiptables(old_ip, new_ip):
     print "Updating iptables..."
-    for port in tcp_ports:
-        os.system("iptables -D INPUT -s " + old_ip + " -d " + local_ip + " -p tcp --dport " + port + " -j ACCEPT")
-        os.system("iptables -I INPUT 2 -s " + new_ip + " -d " + local_ip + " -p tcp --dport " + port + " -j ACCEPT")
+    for tcp_port in tcp_ports:
+        os.system("iptables -D INPUT -s " + old_ip + " -d " + local_ip + " -p tcp --dport " + tcp_port + " -j ACCEPT")
+        os.system("iptables -I INPUT 2 -s " + new_ip + " -d " + local_ip + " -p tcp --dport " + tcp_port + " -j ACCEPT")
     for udp_port in udp_ports:
-        os.system("iptables -D INPUT -s " + old_ip + " -d " + local_ip + " -p udp --dport " + port + " -j ACCEPT")
-        os.system("iptables -I INPUT 2 -s " + new_ip + " -d " + local_ip + " -p udp --dport " + port + " -j ACCEPT")
+        os.system("iptables -D INPUT -s " + old_ip + " -d " + local_ip + " -p udp --dport " + udp_port + " -j ACCEPT")
+        os.system("iptables -I INPUT 2 -s " + new_ip + " -d " + local_ip + " -p udp --dport " + udp_port + " -j ACCEPT")
     print "iptables updated."
 
 try:
