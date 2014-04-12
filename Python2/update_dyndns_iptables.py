@@ -6,7 +6,7 @@ import socket
 dyndns_host = ""
 dyndns_log = "/tmp/dynip.log"
 local_ip = ""
-tcp_ports = ('22')
+tcp_ports = ('22',)
 udp_ports = ()
 
 def updatelog(file, new_ip):
