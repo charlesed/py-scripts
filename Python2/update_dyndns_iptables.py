@@ -3,10 +3,10 @@
 import os
 import socket
 
-home_dyndns = "home-dyn.charlesed.net"
-log_dyndns = "/tmp/home-dyn.charlesed.net.log"
-local_ip = "162.211.66.2"
-tcp_ports = ('22','20406')
+home_dyndns = ""
+log_dyndns = "/tmp/dyndns.log"
+local_ip = ""
+tcp_ports = ('22')
 udp_ports = ()
 
 def updatelog(file, new_ip):
