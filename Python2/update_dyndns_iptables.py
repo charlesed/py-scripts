@@ -37,7 +37,6 @@ print "Cur:", dynip_cur
 
 if dynip_cur != dynip_pre:
     updatelog(log, dynip_cur)
-    print "Log updated to new IP.", dynip_cur
 else:
     print "Adresses match, not updating log."
 
